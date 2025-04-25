@@ -1,15 +1,6 @@
 
 /*****Formulaire permettant à l'utilisateur de se log******* */
 
-//Fonction permettant de vérifier si l'email rentré est valide avec un regex
-const validateEmail = (email) => { 
-    return String(email)
-      .toLowerCase()
-      .match(
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      );
-};
-
 //Event permettant de vérifier les entrées et d'envoyer les informations à l'API
 //Pour rappel |sophie.bluel@test.tld|S0phie|
 document.addEventListener("DOMContentLoaded", function () {
@@ -37,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     },
                     body: JSON.stringify({ email, password })
                 });
-                console.log(response);
+           
                 if (response.ok === true) {
                     // Si la réponse de l'API est valide on connecte l'utilisateur
                     //Et on stocke ses données dans le localStorage

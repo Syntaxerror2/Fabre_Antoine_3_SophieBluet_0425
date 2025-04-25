@@ -51,7 +51,6 @@ async function modaleDisplay() {
     const image = document.createElement("img");
     image.classList.add("modal-image");
     image.src = work.imageUrl;
-    console.log(work.imageUrl);
     divProjets.appendChild(image);
 
     // Création de l'icône "delete"
@@ -236,9 +235,7 @@ function generateModal() {
 
     //Fetch des catégories pour affichage dans le <select>
     const categories = await getCategories()
-    console.log(categories);
     categories.forEach(category => {
-      console.log(category)
       const optionCategory = document.createElement("option");
       optionCategory.value = category.id;
       optionCategory.innerHTML = category.name;
